@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# sxhkd
+killall -e sxhkd; sxhkd &
+
+# desktop arrangement
+readarray monitors < <(xrandr --listactivemonitors | awk 'NR > 1 { print $4 }')
+desktops=(I II III IV V VI VII VIII IX X)
+if [[ ${#monitors[@]} = 2 ]]; then
+	bspc monitor ${monitors[0]} -d ${desktops[0]}
+	bspc monitor ${monitors[1]} -d ${desktops[@]:1}
+else
+	bspc monitor ${monitors[0]} -d ${desktops[@]}
+fi
+
+# chwb2 borders
+~/.config/bspwm/doubleborders &
+
+bspc config border_width 2
+bspc config window_gap 12
+bspc config pointer_follows_monitor true
+bspc config focus_follows_pointer true
+bspc config presel_feedback false
+
+for i in top right bottom left; do
+	bspc config ${i}_padding 20
+done
+
+

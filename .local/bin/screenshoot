@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+folder="$HOME/screenshoots/"
+
+# name file
+now="$(date +%Y_%m_%d_%H%M)"
+existing="$(ls $folder | grep -c "$now" )"
+
+filename="$now"
+if [[ $existing != 0 ]]; then
+    filename="${now}(${existing})"
+fi
+
+maim -d 2 -m 10 $1 "${folder}${filename}.webp"

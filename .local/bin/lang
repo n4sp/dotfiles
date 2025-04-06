@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+
+match="layout:\s*([a-z]*)" 
+if [[ -z $1 ]]; then
+	if [[ "$(setxkbmap -query)" =~ $match ]]; then
+		case ${BASH_REMATCH[1]} in
+			latam) 
+				setxkbmap us ;;
+			us) 
+				setxkbmap latam ;;
+		esac
+	fi 
+else
+	setxkbmap $1
+fi

@@ -1,0 +1,84 @@
+* {
+    background-color: transparent;
+    font: "DinaRemaster 12";
+    background: #252423;
+    foreground: #d4be98;
+    foreground-prompt: #7c6f64;
+}
+
+#window {
+    font: @font;
+    border-radius: 24px;
+    width: 35%;
+}
+
+#mainbox {
+    margin: 15px;
+}
+
+#inputbar {
+    children: [ box, prompt, entry ];
+}
+
+prompt {
+    placeholder-markup: true;
+    content: "Type for a program";
+}
+
+#listview {
+    background-color: transparent;
+    margin: 12px 0 0;
+    lines: 8;
+    spacing: 2px;
+    scrollbar: false;
+    children: [ scrollbar, element ];
+}
+
+#element {
+    padding: 3px;
+    background-color: @background;
+    children: [ element-icon, element-text ];
+}
+
+element.normal.active {
+    background-color: @background;
+}
+
+element.alternate.active {
+    background-color: @background;
+}
+
+element.selected.normal, element.selected.active {
+    background-color: @background;
+}
+
+element-text {
+    text-color: @foreground;
+    background-color: @background;
+}
+
+element-text.selected {
+    background-color: @background;
+}
+
+element.normal.selected {
+    background-color: @background;
+    border: 2px;
+    border-color: #7c6f64;
+}
+
+element-icon {
+    spacing: 12px;
+    background-color: @background;
+}
+
+scrollbar {
+    background-color: #7c6f64;
+    handle-width: 10px;
+    handle-color: #928374;
+    border-color: #a89984;
+}
+
+#message {
+    children: [ textbox ];
+}

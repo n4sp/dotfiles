@@ -1,0 +1,18 @@
+[general]
+import = [
+    "alacritty-theme/themes/autumn.toml"
+]
+working_directory = "None"
+live_config_reload = true
+
+[window]
+padding = {x = 9, y = 9}
+dynamic_title = true
+    
+[font]
+normal = {family = "DinaRemaster", style = "Regular"}
+#glyph_offset = {x = 1, y = 1}
+#size = 12
+
+
+    

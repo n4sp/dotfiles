@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+width=11
+innerw=5
+outerw=6
+
+#focused=0x807974
+focused=0x928374
+unfocused=0x5a524c
+outer=0x45403d 
+
+bspc config border_width $width
+draw() {
+	chwb2 -I $1 -O $outer -i $innerw -o $outerw $*
+}
+
+while read -r _; do
+	draw "$focused" $(bspc query -N -n .local.focused.\!fullscreen)
+	draw "$unfocused" $(bspc query -N -n .\!focused.\!fullscreen)
+done < <(bspc subscribe all)
+
+
