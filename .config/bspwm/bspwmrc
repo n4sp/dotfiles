@@ -13,14 +13,18 @@ else
 	bspc monitor ${monitors[0]} -d ${desktops[@]}
 fi
 
+# rules
+bspc rule -a firefox desktop=\^2 follow=on
+bspc rule -a SpeedCrunch state=floating
+
 # chwb2 borders
 ~/.config/bspwm/doubleborders &
 
-bspc config border_width 2
 bspc config window_gap 12
 bspc config pointer_follows_monitor true
 bspc config focus_follows_pointer true
 bspc config presel_feedback false
+bspc config pointer_modifier mod1
 
 for i in top right bottom left; do
 	bspc config ${i}_padding 20

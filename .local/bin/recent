@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+ 
+$EDITOR $(ls -Art | tail -n1) &

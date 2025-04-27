@@ -3,4 +3,4 @@
 filename=$(date +%Y_%m_%d_%H%M)
 [[ -z "$1" ]] && file="$filename" || file="${filename}.$1"
 touch "$file"
-emacs $file &
+$EDITOR $file &

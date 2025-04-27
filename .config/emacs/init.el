@@ -37,8 +37,8 @@
 (setq files '("packages.el" "custom.el" "binds.el" "org.el"))
 (dolist (elt files) (load (concat cfile elt)))
 
-;; do not automatically indent
-;;(setq electric-indent-mode nil)
+;; do not automatically indent in txt mode
+(add-hook 'text-mode-hook (lambda () (setq electric-indent-mode nil)))
 
 ;; automatically close brackets
 (electric-pair-mode t)

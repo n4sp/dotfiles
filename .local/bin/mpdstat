@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+[[ "$(mpc status "%state%")" =~ playing|paused ]] && exit 0 || exit 1
+

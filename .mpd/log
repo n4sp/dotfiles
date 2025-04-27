@@ -1,0 +1,27 @@
+2025-04-23T09:04:47 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:16:14 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:16:14 update: added /inabakumorilofi.opus
+2025-04-23T09:16:14 update: added /girlsapartment2.mp3
+2025-04-23T09:16:14 update: added /mariogalaxyrain.mp3
+2025-04-23T09:16:14 update: added /rainsounds.opus
+2025-04-23T09:16:14 update: added /loficomp.opus
+2025-04-23T09:16:14 update: added inabakumori/pascalbeats.m4a
+[src/libmpg123/parse.c:skip_junk():1300] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+2025-04-23T09:16:14 mpg123: mpg123_getformat() failed: A generic mpg123 error.
+[src/libmpg123/parse.c:guess_freeformat_framesize():744] error: Cannot look for freeformat frame size with non-seekable and non-buffered stream!
+2025-04-23T09:16:14 update: added inabakumori/relayouter.mp3
+[src/libmpg123/parse.c:skip_junk():1300] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+2025-04-23T09:16:14 mpg123: mpg123_getformat() failed: A generic mpg123 error.
+[src/libmpg123/parse.c:guess_freeformat_framesize():744] error: Cannot look for freeformat frame size with non-seekable and non-buffered stream!
+2025-04-23T09:16:14 update: added inabakumori/yoyuyoku.mp3
+2025-04-23T09:16:14 update: added /touhou.opus
+2025-04-23T09:16:14 update: added /lofi.opus
+2025-04-23T09:20:01 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:20:54 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:38:39 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:38:48 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:42:45 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:43:07 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:44:04 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:46:16 exception: Failed to open "/home/nico/.mpd/state": No such file or directory
+2025-04-23T09:50:10 exception: Failed to open "/home/nico/.mpd/state": No such file or directory

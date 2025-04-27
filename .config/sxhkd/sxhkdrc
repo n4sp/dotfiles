@@ -16,6 +16,10 @@ alt + c
 alt + u
 	~/.local/bin/lang &
 
+# cycle between nodes
+alt + Tab
+    bspc node -f next.local.window
+
 # increase/decrease volume
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
@@ -26,11 +30,11 @@ XF86AudioMute
 
 # play next
 {XF86AudioNext,XF86AudioPrev}
-	playerctl {next,previous}
+    mpdstat && mpc -q {next,prev} ; playerctl -s {next,previous}
 
 # play/pause
 XF86AudioPlay
-	playerctl play-pause
+    mpdstat && mpc -q toggle ; playerctl -s play-pause
 
 # screenshoot
 {_,shift} + Print
@@ -80,9 +84,9 @@ alt + r
 alt + {h,v}
 	bspc node -p ~{south,east}
 
-#fullscreen
-alt + f
-	bspc node -t ~fullscreen	
+# fullscreen/floating layout
+alt + {f,space}
+	bspc node -t ~{fullscreen,floating}	
 
 ## rofi
 # prompt for my org files
@@ -92,3 +96,4 @@ alt + o
 # application launcher
 alt + d
 	rofi -show drun -drun-display-format \{name\}
+

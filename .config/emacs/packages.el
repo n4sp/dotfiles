@@ -34,6 +34,10 @@
   (centaur-tabs-headline-match)
   (setq centaur-tabs-style "wave"))
 
+(use-package sxhkdrc-mode
+    :config
+    (add-to-list 'auto-mode-alist `(,(rx "sxhkdrc" string-end) . sxhkdrc-mode)))
+
 (use-package treemacs
   :ensure t
   :defer t

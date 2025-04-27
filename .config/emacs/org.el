@@ -34,7 +34,7 @@
 ;; capture
 (setq org-capture-templates
       '(("t" "Tests" entry (file+headline "academy.org" "Tests")
-         "* %? %^g\nSCHEDULED: %^t")
+         "* %? %^g\n%^t")
         ("a" "Assignments" entry (file+headline "academy.org" "Written assignments")
          "* %? %^g\nDEADLINE: %^t")
         ("m" "Military" entry (file+headline "academy.org" "Military")
@@ -57,6 +57,9 @@
 (setq org-refile-targets
         '((nil :maxlevel . 3)
         (org-agenda-files :maxlevel . 3)))
+
+;; command used to archive
+(setq org-archive-default-command 'org-archive-subtree)
 
 ;; where to archive stuff
 (setq org-archive-location "%s_archive::")

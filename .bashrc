@@ -5,12 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export EDITOR="emacs"
+export MPD_PORT=6038
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias i='nsxiv'
-alias e='emacs'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+e() { "$EDITOR" $1 & }
+pdf() { zathura "$1" & }
 
 PATH=$PATH:~/.local/bin
 PS1='[\u@\h \W]\$ '
