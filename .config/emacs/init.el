@@ -26,9 +26,9 @@
 (setq scroll-margin 6)
 
 ;; tabs vs spaces
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
+;;(setq-default indent-tabs-mode nil)
+;;(setq-default tab-width 4)
+;;(setq indent-line-function 'insert-tab)
 
 ;; custom variables
 (setq custom-file (concat cfile "custom.el"))

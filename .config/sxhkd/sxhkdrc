@@ -16,9 +16,9 @@ alt + c
 alt + u
 	~/.local/bin/lang &
 
-# cycle between nodes
-alt + Tab
-    bspc node -f next.local.window
+# mpc frontend
+alt + p
+    swmpd
 
 # increase/decrease volume
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
@@ -83,6 +83,10 @@ alt + r
 # horizontal/vertical split
 alt + {h,v}
 	bspc node -p ~{south,east}
+
+# cycle between nodes
+alt + Tab
+    bspc node -f next.local.window
 
 # fullscreen/floating layout
 alt + {f,space}

@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+MUSIC_DIR="$HOME/music"
+PLAYLIST_DIR="$HOME/.config/mpd/playlists"
+ROFI="rofi -kb-custom-1 Ctrl+0 -dmenu"
+W='[a-zA-Z_-]*'
+
+n(){ # which position a track(1) is within a playlist(2)
+    playlist="$PLAYLIST_DIR/${2}.m3u"
+    echo "$(grep -n "$1" "$playlist" | cut -f1 -d: )"
+}
+
+add_to(){
+    playlist=$(mpc lsplaylists | $ROFI)
+    mpc addplaylist "$playlist" "$1"
+}
+
+playlist_editor(){
+    track=$(echo -e "$(mpc listall)\n$(ls -d $MUSIC_DIR/*/)" | $ROFI)
+    [[ -z "$track" ]] && exit 0
+    if [[ -d "$track" ]]; then
+	name="$(basename $track)"
+	ls "$track" | xargs -I {} mpc addplaylist "$name" "${track}{}"
+    else
+	add_to "$track"
+    fi
+}
+
+select_playlist(){
+    track="$(echo -e "Random\n$(cat $PLAYLIST_DIR/$1.m3u)" | $ROFI)"
+    n=$(n "$track" "$1")
+    if [[ $? = 10 ]]; then
+	mpc delplaylist "$1" $n
+	exit 0
+    fi
+    [[ -n "$(mpc queue)" ]] && mpc crop 
+    case "$track" in
+	"Random")
+	    mpc load "$1"
+	    mpc shuffle
+	    ;;
+	$W) 
+	    n=$((n-1))
+	    mpc --range "$n:" load "$1"
+	    ;;
+	'')
+	    exit 0
+	    ;;
+    esac
+    mpc play
+}
+
+choice=$(echo -e "$(mpc lsplaylists)\nPlaylist Editor" | $ROFI)
+normal='[a-zA-Z_-]*'
+case $choice in
+    "Playlist Editor")
+        playlist_editor
+        ;;
+    $W)
+        select_playlist "$choice"
+        ;;
+    '')
+	exit 0
+	;;
+esac
