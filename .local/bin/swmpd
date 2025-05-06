@@ -2,12 +2,12 @@
 
 MUSIC_DIR="$HOME/music"
 PLAYLIST_DIR="$HOME/.config/mpd/playlists"
-ROFI="rofi -kb-custom-1 Ctrl+0 -dmenu"
+ROFI="rofi -i -kb-custom-1 Ctrl+0 -dmenu"
 W='[a-zA-Z_-]*'
 
 n(){ # which position a track(1) is within a playlist(2)
     playlist="$PLAYLIST_DIR/${2}.m3u"
-    echo "$(grep -n "$1" "$playlist" | cut -f1 -d: )"
+    echo "$(grep -n -m 1 "$1" "$playlist" | cut -f1 -d: )"
 }
 
 add_to(){
@@ -28,20 +28,21 @@ playlist_editor(){
 
 select_playlist(){
     track="$(echo -e "Random\n$(cat $PLAYLIST_DIR/$1.m3u)" | $ROFI)"
+    flag=$?
     n=$(n "$track" "$1")
-    if [[ $? = 10 ]]; then
-	mpc delplaylist "$1" $n
+    if [[ $flag = 10 ]]; then
+	mpc delplaylist "$1" $n && echo "Deleted $track from $1"
 	exit 0
     fi
-    [[ -n "$(mpc queue)" ]] && mpc crop 
     case "$track" in
 	"Random")
+	    mpc clear
 	    mpc load "$1"
 	    mpc shuffle
 	    ;;
 	$W) 
-	    n=$((n-1))
-	    mpc --range "$n:" load "$1"
+	    mpc clear
+	    awk -v nu="$n" 'NR >= nu' "$PLAYLIST_DIR/$1.m3u" | mpc add
 	    ;;
 	'')
 	    exit 0
@@ -51,7 +52,6 @@ select_playlist(){
 }
 
 choice=$(echo -e "$(mpc lsplaylists)\nPlaylist Editor" | $ROFI)
-normal='[a-zA-Z_-]*'
 case $choice in
     "Playlist Editor")
         playlist_editor

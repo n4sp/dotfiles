@@ -1,29 +1,63 @@
 sw_volume: 100
 audio_device_state:1:ALSA/PulseAudio
-state: play
-current: 7
-time: 177.293
-random: 1
+state: pause
+current: 0
+time: 3.924
+random: 0
 repeat: 0
 single: 0
 consume: 1
-crossfade: 0
+crossfade: 5
 mixrampdb: 0
 mixrampdelay: -1
-lastloadedplaylist: music
+lastloadedplaylist: 
 playlist_begin
-0:Bang Bang.m4a
-1:Blinded in Chains.m4a
-2:Creepy Nuts｢Bling-Bang-Bang-Born｣ × TV Anime｢マッシュル-MASHLE-｣ Collaboration Music Video #BBBBダンス.m4a
-3:girlsapartment2.mp3
-4:inabakumorilofi.opus
-5:One Step Closer.m4a
-6:Slipknot - (Sic) (Audio).m4a
-7:Slipknot - My Plague (Audio).m4a
-8:Take Me to the Beach.m4a
-9:アガリ症 ⧸ 重音テトSV.m4a
-10:はいよろこんで ⧸ こっちのけんと MV.m4a
-11:パスカルビーツ.m4a
-12:ループスピナ.m4a
-13:合法的トビ方ノススメ.m4a
+0:Daydreamin' (feat. Jill Scott).m4a
+1:Elton John - I'm Still Standing.m4a
+2:girlsapartment2.mp3
+3:Kick, Push.m4a
+4:Kikuo - 愛して愛して愛して.m4a
+5:Little Dark Age.m4a
+6:Love Don't Let Me Go.m4a
+7:No Hesitation.m4a
+8:One Step Closer.m4a
+9:Slipknot - (Sic) (Audio).m4a
+10:Slipknot - My Plague (Audio).m4a
+11:Slipknot - Vermilion ⧸ Lyrics.m4a
+12:Take Me to the Beach.m4a
+13:アガリ症 ⧸ 重音テトSV.m4a
+14:かめりあ - ヒアソビ (feat. 初音ミク) 【Electroswing】.m4a
+15:はいよろこんで ⧸ こっちのけんと MV.m4a
+16:パスカルビーツ.m4a
+17:ベースラインやってる？笑 - かめりあ feat. ななひら.m4a
+18:ループスピナ.m4a
+19:合法的トビ方ノススメ.m4a
+20:Duran Duran - INVISIBLE.m4a
+21:【Ado】初夏 (Shoka).m4a
+22:【Ado】逆光（ウタ from ONE PIECE FILM RED）.m4a
+23:Creepy Nuts｢Bling-Bang-Bang-Born｣ × TV Anime｢マッシュル-MASHLE-｣ Collaboration Music Video #BBBBダンス.m4a
+24:Duran Duran - INVISIBLE.m4a
+25:Elton John - I'm Still Standing.m4a
+26:girlsapartment2.mp3
+27:Slipknot - (Sic) (Audio).m4a
+28:Slipknot - My Plague (Audio).m4a
+29:Slipknot - Vermilion ⧸ Lyrics.m4a
+30:touhou.opus
+31:アガリ症 ⧸ 重音テトSV.m4a
+32:かめりあ - ヒアソビ (feat. 初音ミク) 【Electroswing】.m4a
+33:はいよろこんで ⧸ こっちのけんと MV.m4a
+34:ベースラインやってる？笑 - かめりあ feat. ななひら.m4a
+35:稲葉曇『ツクリカケノ心象』Vo. 歌愛ユキ.m4a
+36:No Hesitation.m4a
+37:Blinded in Chains.m4a
+38:Love Don't Let Me Go.m4a
+39:Little Dark Age.m4a
+40:Daydreamin' (feat. Jill Scott).m4a
+41:Kick, Push.m4a
+42:One Step Closer.m4a
+43:Take Me to the Beach.m4a
+44:Bang Bang.m4a
+45:パスカルビーツ.m4a
+46:ループスピナ.m4a
+47:合法的トビ方ノススメ.m4a
 playlist_end
