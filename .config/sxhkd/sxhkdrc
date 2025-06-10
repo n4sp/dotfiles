@@ -20,6 +20,10 @@ alt + u
 alt + p
     swmpd
 
+# dmenu
+alt + d
+    dmenu
+
 # increase/decrease volume
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
@@ -35,6 +39,10 @@ XF86AudioMute
 # play/pause
 XF86AudioPlay
     mpdstat && mpc -q toggle ; playerctl -s play-pause
+
+# stop mpd playback
+shift + XF86AudioPlay
+    mpc clear 
 
 # screenshoot
 {_,shift} + Print
@@ -98,6 +106,6 @@ alt + o
     org
 
 # application launcher
-alt + d
+Super_L
 	rofi -show drun -drun-display-format \{name\}
 

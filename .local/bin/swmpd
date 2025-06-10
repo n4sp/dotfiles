@@ -16,11 +16,11 @@ add_to(){
 }
 
 playlist_editor(){
-    track=$(echo -e "$(mpc listall)\n$(ls -d $MUSIC_DIR/*/)" | $ROFI)
+    track=$(echo -e "$(mpc listall)\n$(ls -d $MUSIC_DIR/*/)\n${MUSIC_DIR}" | $ROFI)
     [[ -z "$track" ]] && exit 0
     if [[ -d "$track" ]]; then
 	name="$(basename $track)"
-	ls "$track" | xargs -I {} mpc addplaylist "$name" "${track}{}"
+	find "$track" -printf "%f\0" | xargs -0 -I {} mpc addplaylist "$name" "${track}/{}"
     else
 	add_to "$track"
     fi
@@ -40,12 +40,12 @@ select_playlist(){
 	    mpc load "$1"
 	    mpc shuffle
 	    ;;
-	$W) 
-	    mpc clear
-	    awk -v nu="$n" 'NR >= nu' "$PLAYLIST_DIR/$1.m3u" | mpc add
-	    ;;
 	'')
 	    exit 0
+	    ;;
+	*) 
+	    mpc clear
+	    awk -v nu="$n" 'NR >= nu' "$PLAYLIST_DIR/$1.m3u" | mpc add
 	    ;;
     esac
     mpc play

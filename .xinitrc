@@ -19,7 +19,12 @@ xrandr --output eDP-1 --auto --left-of HDMI-1 &
 xsetroot -cursor_name left_ptr &
 
 # compositor
-picom --backend glx -b &
+picom --conf "$HOME/.config/picom.conf" -b &
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx5 -dr &
 
 # wm
 exec bspwm
